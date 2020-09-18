@@ -1,0 +1,62 @@
+snippet imp "Import"
+import ${2:name} from "${1:module}"
+endsnippet
+
+snippet imd "Import destruction"
+import {${2:name}} from "${1:module}"
+endsnippet
+
+snippet ime "Import everything"
+import {${2:alias}} from "${1:module}"
+endsnippet
+
+snippet ima "Import alias"
+import {${2:alias} as ${3:name}} from "${1:module}"
+endsnippet
+
+snippet ed "Export default"
+export default ${1:name}
+endsnippet
+
+snippet	af "Create arrow function"
+const ${1:name} = ${2:params} => {
+	${3}
+}
+endsnippet
+
+snippet	anaf "Create anonymous arrow function"
+(${1:params}) => {
+	${2}
+}
+endsnippet
+
+snippet eaf "Export arrow function"
+export const ${1:name} = ${2:params} => {
+	${3}
+}
+endsnippet
+
+snippet edaf "Export default arrow function"
+const ${1:name} = ${2:params} => {
+	${3}
+}
+
+export default ${1}
+endsnippet
+
+snippet	dob "Destruct object"
+const {${2:values}} = ${1:object}
+endsnippet
+
+snippet	dar "Destruct array"
+const [${2:values}] = ${1:array}
+endsnippet
+
+snippet cl "console.log"
+console.log(${VISUAL}${1})
+endsnippet
+
+snippet ov "Object Value JS"
+${1:value-name}: ${2:value},
+endsnippet
+

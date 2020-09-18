@@ -1,0 +1,23 @@
+extends javascript
+
+snippet ir "import react" b
+import React from 'react'
+endsnippet
+
+snippet edsc "Export default stateless component"
+const ${1:name} = ${2:params} => {
+	return (
+		${3}
+	)
+}
+
+export default ${1}
+endsnippet
+
+snippet esc "Export stateless component"
+export const ${1:name} = ${2:params} => {
+	return (
+		${3}
+	)
+}
+endsnippet
