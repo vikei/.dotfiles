@@ -1,7 +1,4 @@
-set smartcase
-set ignorecase
-set incsearch
-set hlsearch
+set incsearch ignorecase smartcase hlsearch
 
 syntax on
 filetype plugin indent on
@@ -12,11 +9,11 @@ set mouse=a
 
 set number
 
-set nowrap
+set wrap
 set textwidth=80
 set linebreak
 
-set so=5
+set so=6
 set sidescroll=20
 
 set whichwrap=b,s,<,>,l,h
@@ -28,6 +25,8 @@ let mapleader=","
 set ut=300
 
 set shortmess+=c
+
+set iskeyword&
 
 map <Leader>r :so $MYVIMRC<cr>
 
@@ -50,7 +49,6 @@ let g:coc_global_extensions = [
 \ 'coc-actions',
 \ 'coc-calc',
 \ 'coc-explorer',
-\ 'coc-graphql',
 \ 'coc-sh',
 \ 'coc-stylelint',
 \ 'coc-fzf-preview',
@@ -112,7 +110,7 @@ nmap <leader>ac <Plug>(coc-codeaction)
 function Format() 
   call CocAction('runCommand', 'tsserver.organizeImports')
   call CocAction('runCommand', 'prettier.formatFile')
-  " call CocAction('runCommand', 'eslint.executeAutofix')
+  call CocAction('runCommand', 'eslint.executeAutofix')
 endfunction
 
 nmap <leader>qf :call Format()<CR>
@@ -156,6 +154,8 @@ Plug 'sheerun/vim-polyglot'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+let g:airline#extensions#tabline#enabled = 1
+" let g:airline_statusline_ontop = 1
 
 Plug 'scrooloose/nerdcommenter'
 let g:NERDSpaceDelims = 1
@@ -180,10 +180,13 @@ Plug 'jiangmiao/auto-pairs'
 
 Plug 'junegunn/fzf'
 
-Plug 'jparise/vim-graphql'
-
 Plug 'morhetz/gruvbox'
+Plug 'haishanh/night-owl.vim'
 
 call plug#end()
 
-colorscheme gruvbox
+" colorscheme gruvbox
+colorscheme night-owl
+if (has("termguicolors"))
+ set termguicolors
+endif
