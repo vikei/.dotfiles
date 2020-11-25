@@ -1,0 +1,9 @@
+{
+  "emmet.includeLanguages": {
+    "vue-html": "html",
+    "javascript": "javascriptreact"
+  },
+
+  "explorer.width": 35,
+  "explorer.previewAction.onHover": false
+}
